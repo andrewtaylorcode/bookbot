@@ -15,3 +15,13 @@ def get_num_characters(book_text):
         else:
             number_of_characters.update({character: 1})
     return number_of_characters
+
+def sort_on(items):
+    return items["num"]
+
+def sort_dictionary(book_dictionary):
+    sorted_list = []
+    for ch, n in book_dictionary.items():
+        sorted_list.append({"char": ch, "num": n})
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
